@@ -1,9 +1,32 @@
 {
   "tasks": {
-    "dev": "deno run -A --watch main.ts"
+    "build": "deno run -A npm:@remix-run/dev vite:build",
+    "start": "deno run -A --env main.ts"
   },
+  "exclude": ["build/"],
+  "nodeModulesDir": "auto",
   "imports": {
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.0",
     "@hono/hono": "jsr:@hono/hono@^4.6.5",
-    "@std/assert": "jsr:@std/assert@1"
+    "@remix-run/deno": "npm:@remix-run/deno@^2.13.1",
+    "@remix-run/dev": "npm:@remix-run/dev@^2.13.1",
+    "@remix-run/react": "npm:@remix-run/react@^2.13.1",
+    "@remix-run/server-runtime": "npm:@remix-run/server-runtime@^2.13.1",
+    "@std/assert": "jsr:@std/assert@1",
+    "@types/react": "npm:@types/react@^18.3.11",
+    "@types/react-dom": "npm:@types/react-dom@^18.3.1",
+    "autoprefixer": "npm:autoprefixer@^10.4.20",
+    "isbot": "npm:isbot@^5.1.17",
+    "react": "npm:react@^18.3.1",
+    "react-dom": "npm:react-dom@^18.3.1",
+    "tailwindcss": "npm:tailwindcss@^3.4.14",
+    "vite": "npm:vite@^5.4.9"
+  },
+  "compilerOptions": {
+    "lib": ["deno.window", "dom"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "jsxImportSourceTypes": "@types/react",
+    "strict": true
   }
 }
